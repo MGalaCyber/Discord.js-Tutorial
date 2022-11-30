@@ -1,0 +1,32 @@
+{
+  "name": "discord.js-tutorial",
+  "version": "1.0.0",
+  "description": "discord.js v14 new handlers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MGalaCyber/Discord.js-Tutorial.git"
+  },
+  "keywords": [
+    "discord.js",
+    "discord.js-v14",
+    "discord-bot"
+  ],
+  "author": "MGalaCyber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MGalaCyber/Discord.js-Tutorial/issues"
+  },
+  "homepage": "https://github.com/MGalaCyber/Discord.js-Tutorial#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^14.7.0",
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security",
+    "ms": "^2.1.3"
+  }
+}

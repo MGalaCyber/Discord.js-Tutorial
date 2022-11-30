@@ -5,6 +5,10 @@ require("dotenv").config();
 
 //=====================================| Code |=====================================\\
 
+//======================< Function >======================\\
+const { loadCommands } = require("./Structures/Handlers/Loaders/loadCommands.js");
+const { loadEvents } = require("./Structures/Handlers/Loaders/loadEvents.js");
+
 //======================< Client >======================\\
 const client = new Client({
     intents: [
@@ -42,6 +46,7 @@ const client = new Client({
 
 //======================< Collection >======================\\
 client.slashCommands = new Collection();
+client.events = new Collection();
 
 //======================< Handlers >======================\\
 const Handlers = [
@@ -53,6 +58,11 @@ Handlers.forEach(handler => {
 });
 
 //======================< Login >======================\\
-client.login(process.env.TOKEN).then(console.log("Client is ready!"));
+client.login(process.env.TOKEN).then(() => {
+    loadEvents(client, color);
+    loadCommands(client, color);
+}).catch(err => {
+    console.log(`${color.bold.red(`[INDEX ERROR]`)} ` + `${err}`.bgRed);
+});
 
 module.exports = client;

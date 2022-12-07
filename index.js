@@ -48,15 +48,6 @@ const client = new Client({
 client.slashCommands = new Collection();
 client.events = new Collection();
 
-//======================< Handlers >======================\\
-const Handlers = [
-
-];
-
-Handlers.forEach(handler => {
-    require(`./Structures/Handlers/${handler}`)(client, color);
-});
-
 //======================< Login >======================\\
 client.login(process.env.TOKEN).then(() => {
     loadEvents(client, color);

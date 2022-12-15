@@ -8,6 +8,7 @@ require("dotenv").config();
 //======================< Function >======================\\
 const { loadCommands } = require("./Structures/Handlers/Loaders/loadCommands.js");
 const { loadEvents } = require("./Structures/Handlers/Loaders/loadEvents.js");
+const { mongoose } = require("./Structures/Handlers/mongoDB.js");
 
 //======================< Client >======================\\
 const client = new Client({
@@ -52,6 +53,7 @@ client.events = new Collection();
 client.login(process.env.TOKEN).then(() => {
     loadEvents(client, color);
     loadCommands(client, color);
+    mongoose(client, color);
 }).catch(err => {
     console.log(`${color.bold.red(`[INDEX ERROR]`)} ` + `${err}`.bgRed);
 });

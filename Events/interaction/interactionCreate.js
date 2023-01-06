@@ -30,6 +30,32 @@ module.exports = {
             } catch (error) {
                 console.log(`${color.bold.red(`[INTERACTION > CREATE : ERROR]`)} ` + `${error}`.bgRed);
             }
+        };
+        if (interaction.isButton()) {
+            if (interaction.customId === "btn-primary") {
+                interaction.reply({
+                    ephemeral: true,
+                    content: "This is a Primary button"
+                });
+            }
+            if (interaction.customId === "btn-secondary") {
+                interaction.reply({
+                    ephemeral: true,
+                    content: "This is a Secondary button"
+                });
+            }
+            if (interaction.customId === "btn-success") {
+                interaction.reply({
+                    ephemeral: true,
+                    content: "This is a Success button"
+                });
+            }
+            if (interaction.customId === "btn-danger") {
+                interaction.reply({
+                    ephemeral: true,
+                    content: "This is a Danger button"
+                });
+            }
         }
     }
 };
